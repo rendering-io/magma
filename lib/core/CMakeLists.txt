@@ -1,4 +1,4 @@
 ###############################################################################
-# test/CMakeLists.txt
-add_subdirectory(core)
+# lib/core/CMakeLists.txt
+add_library(core thread_pool.c++)
 
