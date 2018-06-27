@@ -1,4 +1,6 @@
 ###############################################################################
 # lib/core/CMakeLists.txt
-add_library(core thread_pool.c++)
+add_library(MagmaCore thread_pool.c++)
+install(TARGETS MagmaCore
+	ARCHIVE DESTINATION lib)
 
