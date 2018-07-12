@@ -15,7 +15,7 @@ include(ExternalProject)
 
 # Declare configuration options.
 option(BUILD_DOCS "Build documentation" ON)
-option(BUILD_EXAMPLES "Build examples" ON)
+option(BUILD_SAMPLES "Build samples" ON)
 option(BUILD_TESTS "Build unit tests" ON)
 
 # Build external dependencies.
@@ -39,7 +39,7 @@ if (BUILD_TESTS)
   add_subdirectory(test)
 endif()
 
-# Optionally build examples.
-if (BUILD_EXAMPLES)
-  add_subdirectory(examples)
+# Optionally build samples.
+if (BUILD_SAMPLES)
+  add_subdirectory(samples)
 endif()
