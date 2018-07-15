@@ -4,6 +4,8 @@
 #ifndef MAGMA_CORE_ITERATOR_H
 #define MAGMA_CORE_ITERATOR_H
 
+#include <memory>
+
 namespace magma {
 
 template <typename T> class input_iterator;
