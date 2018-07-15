@@ -4,14 +4,14 @@
 using namespace magma;
 
 TEST(instance, default_construction_does_not_throw) {
-  ASSERT_NO_THROW(auto i = vk::instance{});
+  ASSERT_NO_THROW(vk::instance{});
 }
 
 TEST(instance, default_construction_creates_non_null_handle) {
-  auto i = vk::instance{};
-  ASSERT_NE(i, VkInstance{VK_NULL_HANDLE});
+  vk::instance instance{};
+  ASSERT_NE(instance, VkInstance{VK_NULL_HANDLE});
 
-  VkInstance handle = i;
+  VkInstance handle = instance;
   ASSERT_NE(handle, VkInstance{VK_NULL_HANDLE});
 }
 

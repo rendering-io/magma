@@ -1,5 +1,5 @@
 #include "magma/ral/ral.h"
-#include "ral_internal.h"
+#include "magma/ral/ral_internal.h"
 
 using namespace magma::ral;
 

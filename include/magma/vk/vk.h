@@ -4,6 +4,7 @@
 #ifndef MAGMA_VK_VK_H
 #define MAGMA_VK_VK_H
 
+#include "magma/ral/ral_internal.h"
 #include <memory>
 #include <vulkan/vulkan.h>
 
@@ -13,16 +14,13 @@ namespace vk {
 /**
  * A Vulkan instance, which holds global driver state and isolation.
  */
-class instance {
-private:
-  struct impl;
-
+class instance : public magma::ral::internal::instance {
 public:
-  /** Default constructor. */
+  /** Constructor. */
   instance();
 
-  /** Move-constructor. */
-  instance(instance &&);
+  /** Deleted move-constructor. */
+  instance(instance &&) = delete;
 
   /** Deleted copy-constructor. */
   instance(const instance &) = delete;
@@ -37,7 +35,8 @@ public:
   operator const VkInstance() const;
 
 private:
-  std::unique_ptr<impl> _impl;
+  // The Vulkan instance.
+  VkInstance _instance;
 };
 
 class physical_device {};
