@@ -1,6 +1,8 @@
 ###############################################################################
 # lib/ral/CMakeLists.txt
-set(SOURCES instance.c++
+set(SOURCES device.c++
+            instance.c++
+            physical_device.c++
 	    )
 add_library(MagmaRAL ${SOURCES})
 install(TARGETS MagmaRAL
