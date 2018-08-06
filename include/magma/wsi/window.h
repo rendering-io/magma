@@ -6,7 +6,12 @@
 
 #include <list>
 #include <unordered_map>
+
+#if defined(WIN32)
+#include <Windows.h>
+#elif defined(__linux__)
 #include <xcb/xcb.h>
+#endif
 
 namespace magma {
 namespace wsi {
@@ -56,8 +61,13 @@ private:
                      std::list<registered_callback>>
       _callbacks;
 
+#if defined(WIN32)
+  // The native window handle.
+  HWND _window;
+#elif defined(__linux__)
   // The native window handle.
   xcb_window_t _window;
+#endif
 };
 } // namespace wsi
 } // namespace magma
